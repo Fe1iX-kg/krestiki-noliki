@@ -39,10 +39,11 @@ class GameRoomViewSet(viewsets.ModelViewSet):
         """
         Динамически задаём разрешения в зависимости от действия.
         """
-        if self.action in ['join', 'game', 'move']:  # Разрешаем join, game и move для неавторизованных
+        if self.action in ['join', 'game', 'move', 'new_game']:  # Добавляем new_game
             return [AllowAny()]
         return super().get_permissions()
 
+    # ... остальные методы без изменений ...
     # ... остальные методы без изменений ...
     # ... остальные методы без изменений ...
     def perform_create(self, serializer):
