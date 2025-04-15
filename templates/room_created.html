@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Created</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .code {
+            font-size: 24px;
+            color: #2ecc71;
+            margin: 20px 0;
+        }
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        a:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Room Created!</h1>
+    <p>Your room code is:</p>
+    <div class="code">{{ room_code }}</div>
+    <p>Share this code with your friend to join the game.</p>
+    <a href="{% url 'game' room_id %}">Go to Game</a>
+</body>
+</html>

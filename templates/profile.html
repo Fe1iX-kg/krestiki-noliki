@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Profile</h1>
+    <p>Username: {{ user.username }}</p>
+    <p>Email: {{ user.email|default:"Not provided" }}</p>
+    <p>Date Joined: {{ user.date_joined }}</p>
+    <h2>Your Created Rooms</h2>
+    {% if created_rooms %}
+        <ul>
+        {% for room in created_rooms %}
+            <li>Room Code: {{ room.code }} (Created: {{ room.created_at }})</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>You haven't created any rooms yet.</p>
+    {% endif %}
+    <h2>Rooms You've Joined</h2>
+    {% if joined_rooms %}
+        <ul>
+        {% for room in joined_rooms %}
+            <li>Room Code: {{ room.code }} (Created by: {{ room.creator.username }})</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>You haven't joined any rooms yet.</p>
+    {% endif %}
+    <a href="{% url 'lobby' %}">Back to Lobby</a>
+{% endblock %}

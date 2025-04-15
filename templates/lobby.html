@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lobby</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input, button {
+            padding: 10px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lobby</h1>
+    <a href="{% url 'create_room_direct' %}">Create Room</a>
+    <form id="join-form">
+        <input type="text" id="room-code" placeholder="Enter room code" required>
+        <button type="submit">Join Room</button>
+    </form>
+
+    <script src="{% static 'js/lobby.js' %}"></script>
+
+</body>
+</html>
+

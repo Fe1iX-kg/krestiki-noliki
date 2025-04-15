@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <style>
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            gap: 5px;
+        }
+        .cell {
+            width: 100px;
+            height: 100px;
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            cursor: pointer;
+        }
+        .cell:hover {
+            background: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Game</h1>
+    <div id="status"></div>
+    <div class="board">
+        {% for i in "012345678" %}
+        <div class="cell"></div>
+        {% endfor %}
+    </div>
+    <button id="new-game">New Game</button>
+
+    <script src="{% static 'js/game.js' %}"></script>
+</body>
+</html>
