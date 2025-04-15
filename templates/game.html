@@ -31,7 +31,7 @@
     <div id="status"></div>
     <div class="board">
         {% for i in "012345678" %}
-        <div class="cell"></div>
+        <div class="cell" data-index="{{ i }}"></div>
         {% endfor %}
     </div>
     <button id="new-game">New Game</button>
